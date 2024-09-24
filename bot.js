@@ -43,7 +43,7 @@ async function main() {
     // Inisialisasi InMemoryKeyStore untuk menyimpan kunci
     const keyStore = new keyStores.InMemoryKeyStore();
     const keyPair = KeyPair.fromString(privateKey);  // Gunakan private key dari file pk.txt
-    await keyStore.setKey("mainnet", "riosn444.tg", keyPair);  // Ganti dengan akun pengirim yang benar
+    await keyStore.setKey("mainnet", "yourwallet.near", keyPair);  // Ganti dengan akun pengirim yang benar
 
     const config = {
         networkId: "mainnet",  // Ganti dengan "testnet" jika ingin uji coba
@@ -56,7 +56,7 @@ async function main() {
 
     // Hubungkan ke jaringan NEAR
     const near = await connect(config);
-    const senderAccount = await near.account("riosn444.tg");  // Ganti dengan nama akun pengirim yang benar
+    const senderAccount = await near.account("yourwallet.near");  // Ganti dengan nama akun pengirim yang benar
 
     // Meminta input jumlah NEAR dari pengguna
     const amountInNear = parseFloat(await askQuestion("Masukkan jumlah NEAR yang ingin dikirim: "));
